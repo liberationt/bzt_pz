@@ -1,0 +1,290 @@
+body{
+    padding: 0;
+    margin: 0;
+    }
+.treechart {
+    transition: all .3s;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px 20px;
+    font-size:12px;
+
+    table {
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        display: inline-table;
+        margin: 0 auto;
+
+        td {
+            position: relative;
+            vertical-align: top;
+            padding: 0 0 30px 0;
+            text-align: center;
+        }
+    }
+
+    .parent {
+        background-color: #199ed8 !important;
+        font-weight: bold;
+    }
+
+    .extend_handle {
+        position: absolute;
+        left: calc(50% - 6px);
+        bottom: 22px;
+        cursor: pointer;
+        z-index: 2;
+        color: rgba(0,0,0,.2);
+
+        &:before {
+            content: "\f103";
+            font-family: FontAwesome;
+            display: block;
+            font-size: 1.5em;
+        }
+
+        &:hover:before {
+            color: #67C23A;
+        }
+    }
+
+    .extend .extend_handle:before {
+        transform: rotateZ(180deg);
+    }
+
+    .extend::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 15px;
+        height: 15px;
+        border-left: 1px solid #ccc;
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    .childLevel::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        height: 15px;
+        border-left: 1px solid #ccc;
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    .childLevel::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -15px;
+        border-top: 1px solid #ccc;
+    }
+
+    .childLevel:first-child:before,
+    .childLevel:last-child:before {
+        display: none;
+    }
+
+    .childLevel:first-child:after {
+        left: 50%;
+        height: 15px;
+        border: 1px solid;
+        border-color: #ccc transparent transparent #ccc;
+        border-radius: 6px 0 0 0;
+        transform: translate3d(1px, 0, 0);
+    }
+
+    .childLevel:last-child:after {
+        right: 50%;
+        height: 15px;
+        border: 1px solid;
+        border-color: #ccc #ccc transparent transparent;
+        border-radius: 0 6px 0 0;
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    .childLevel:first-child.childLevel:last-child::after {
+        left: auto;
+        border-radius: 0;
+        border-color: transparent #ccc transparent transparent;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .node {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0 5px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        user-select: none;
+    }
+
+    .node .person {
+        padding-top: 5px;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        >span {
+            margin-top: -5px;
+        }
+        .sub-title {
+            color: rgba(0, 0, 0, 0.5);
+            padding-bottom: 2px;
+            //transform: scale(.85);
+        }
+    }
+
+    .node .person .avat {
+        transition: all .3s;
+        min-height: 50px;
+        padding: 10px 15px;
+        display: flex;
+        align-items:center;
+        background-color: #ffcc00;
+        box-sizing: border-box;
+        border-radius: 3px;
+        box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+        font-size:12px;
+        line-height: 20px;
+        text-align:center;
+        writing-mode: tb-rl;
+        white-space: normal;
+        width: 40px;
+        height: auto;
+        &.ver{
+            width: 30px;
+            height: 200px;
+            white-space: break-spaces;
+            word-break: break-all;
+        }
+        .opreate_icon {
+            display: none;
+        }
+
+        &:hover {
+            .opreate_icon {
+                display: block;
+                position: absolute;
+                top: -3px;
+                right: -3px;
+                padding: 5px;
+            }
+        }
+
+        &.root {
+            transition: all .3s;
+            min-height: auto;
+            background-color: #3eca96 !important;
+            color: #FFF;
+            writing-mode: horizontal-tb;
+            width:auto;
+            height: auto;
+        }
+        &.last{
+            background-color: #c3f4ff;
+        }
+
+        &.dept {
+            background-color: #199ed8;
+        }
+
+        &.other {
+            background-color: #ccc !important;
+        }
+    }
+
+    .node .person .avat img {
+        cursor: pointer;
+    }
+
+    .node .person .name {
+        height: 2em;
+        line-height: 2em;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .node.hasMate::after {
+        content: '';
+        position: absolute;
+        left: 2em;
+        right: 2em;
+        top: 15px;
+        border-top: 1px solid #ccc;
+        z-index: 1;
+    }
+
+    .node.hasMate .person:last-child {
+        margin-left: 1em;
+    }
+
+    .landscape {
+        transform: rotate(-90deg);
+        padding: 0 4em;
+    }
+
+    .landscape .node {
+        text-align: left;
+        height: 8em;
+        width: 8em;
+    }
+
+    .landscape .person {
+        position: relative;
+        transform: rotate(90deg);
+        padding-left: 4.5em;
+        height: 4em;
+        top: 4em;
+        left: -1em;
+    }
+
+    .landscape .person .avat {
+        position: absolute;
+        left: 0;
+    }
+
+    .landscape .person .name {
+        height: 4em;
+        line-height: 4em;
+    }
+
+    .landscape .hasMate {
+        position: relative;
+    }
+
+    .landscape .hasMate .person {
+        position: absolute;
+    }
+
+    .landscape .hasMate .person:first-child {
+        left: auto;
+        right: -4em;
+    }
+
+    .landscape .hasMate .person:last-child {
+        left: -4em;
+        margin-left: 0;
+    }
+
+    .tips {
+        padding: 10px;
+    }
+
+    /* .el-dialog__body {
+        padding: 30px 25px;
+        p {
+            margin-bottom: 15px;
+        }
+    }
+    .el-dialog__headerbtn {
+        top: 30px;
+        right: 30px;
+    } */
+}
+

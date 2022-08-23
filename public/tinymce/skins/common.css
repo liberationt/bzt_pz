@@ -1,0 +1,415 @@
+/*---------正文内容块----------------*/
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #CCC;
+}
+
+.info-block {
+    counter-reset: zhu;
+}
+.info-block a {
+    cursor: pointer;
+    color: #409EFF;
+}
+
+[contenteditable]::hover,
+[contenteditable]::focus {
+    outline: 1px solid #cde2ef;
+}
+
+.mce-content-body [contentEditable="false"][data-mce-selected] {
+    outline: none;
+}
+
+.mce-content-body p {
+    line-height: 1.85;
+}
+.info-block span[index] {
+    color: #008000;
+}
+
+.info-block .info-title {
+    font-weight: bold;
+}
+.info-block .info-title * {
+    font-weight: normal;
+}
+
+.ann-zhu::before {
+    content: "\6ce8：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-zhu-list {
+    counter-increment: zhu;
+}
+
+.ann-zhu-list::before {
+    content: "\6ce8"counter(zhu) "：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.ann-zhu-list-first {
+    counter-reset: zhu;
+    counter-increment: zhu;
+}
+.ann-zhu-list-first::before {
+    content: "\6ce8"counter(zhu) "：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-image-footnote-list {
+    counter-increment: imageFootNote;
+}
+
+.ann-image-footnote-list::before {
+    content: counter(imageFootNote, lower-alpha);
+    vertical-align: super;
+    font-size: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0px 0px 0px;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.ann-formula-list {
+    counter-increment: formulaCount;
+}
+
+.ann-formula-list::before {
+    content: "..............................(" counter(formulaCount) ")";
+}
+.ann-image-footnote-list-first {
+    counter-reset: imageFootNote;
+    counter-increment: imageFootNote;
+}
+.ann-image-footnote-list-first::before {
+    content: counter(imageFootNote, lower-alpha);
+    vertical-align: super;
+    font-size: 9px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0px 0px 0px;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-shili::before {
+    content: "\793a\4f8b：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-shili-list {
+    counter-increment: shili;
+}
+.ann-shili-list::before {
+    content: "\793a\4f8b"counter(shili) "：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-shili-list-first {
+    counter-reset: shili;
+    counter-increment: shili;
+}
+.ann-shili-list-first::before {
+    content: "\793a\4f8b"counter(shili) "：";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-tu {
+    text-align: center;
+}
+.ann-tu::before {
+    content: "\56fe";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.ann-tu-list {
+    text-align: center;
+    counter-increment: tu;
+}
+.ann-tu-list::before {
+    content: "\56fe"counter(tu);
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.ann-table {
+    text-align: center;
+}
+.ann-table::before {
+    content: "\8868";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.ann-table-list {
+    text-align: center;
+    counter-increment: li;
+}
+.ann-table-list::before {
+    content: "\8868" counter(li);
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/*------有序列\8868----------*/
+ol,
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+ol li,
+ul li {
+    line-height: 1.85;
+}
+ol li > ol {
+    padding-left: 1.5em;
+}
+ol li > ul {
+    padding-left: 1.5em;
+}
+
+ol.ol-list {
+    counter-reset: section;
+    list-style-type: none !important;
+}
+
+ol.ol-list > li {
+    counter-increment: section;
+}
+
+ol.ol-list > li::before {
+    content: counter(section) " ";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+ol.ol-list > li > ol {
+    counter-reset: section 0 !important;
+}
+
+ol.ol-list > li > ol > li::before {
+    content: counters(section, ".");
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.info-block > ol.dix-list {
+    list-style-type: none !important;
+}
+.info-block > ol.dix-list > li:first-child::before {
+    content: "\9644\5f55"attr(letter) "";
+    margin-right: 0.5em;
+}
+
+.info-block > ol.dix-list > li ol {
+    counter-reset: dixCount;
+    list-style: none;
+}
+.info-block > ol.dix-list > li ol li {
+    counter-increment: dixCount;
+}
+.info-block > ol.dix-list > li ol li::before {
+    content: "" attr(letter) "." counters(dixCount, ".");
+    display: inline-block;
+    margin-right: 0.5em;
+}
+/******附录中的表例，如表A.1********/
+.info-block > ol.dix-list > li p.ann-table-list{
+    text-align: center;
+    counter-increment: li;
+}
+.info-block > ol.dix-list > li p.ann-table-list::before{
+    content: "\8868" attr(fulu) "." counter(li);
+    display: inline-block;
+    margin-right: 0.5em;
+}
+/******附录中的图例，如图A.1********/
+.info-block > ol.dix-list > li p.ann-tu-list{
+    text-align: center;
+    counter-increment: tu;
+}
+.info-block > ol.dix-list > li p.ann-tu-list::before{
+    content: "\56fe" attr(fulu) "." counter(tu);
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+
+/******数字1)********/
+ol.lower-greek {
+    list-style-type: none !important;
+    counter-reset: num1;
+}
+ol.lower-greek > li {
+    counter-increment: num1 !important;
+}
+ol.lower-greek > li::before {
+    content: counter(num1) ")" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+/******数字1.********/
+ol.lower-greek-rtl {
+    list-style-type: none !important;
+    counter-reset: num2;
+}
+ol.lower-greek-rtl > li {
+    counter-increment: num2 !important;
+}
+ol.lower-greek-rtl > li::before {
+    content: counter(num2) "." !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******小写英文字母********/
+ol.lower-alpha {
+    list-style-type: none !important;
+    counter-reset: section1;
+}
+ol.lower-alpha > li {
+    counter-increment: section1 !important;
+}
+ol.lower-alpha > li::before {
+    content: counter(section1, lower-alpha) ")" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******大写英文字母********/
+ol.upper-alpha {
+    list-style-type: none !important;
+    counter-reset: section2;
+}
+ol.upper-alpha > li {
+    counter-increment: section2 !important;
+}
+ol.upper-alpha > li::before {
+    content: counter(section2, upper-alpha) ")" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******数字。********/
+ol.lower-roman {
+    list-style-type: none !important;
+    counter-reset: section3;
+}
+ol.lower-roman > li {
+    counter-increment: section3 !important;
+}
+ol.lower-roman > li::before {
+    content: counter(section3, lower-roman) "." !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******中文数字********/
+ol.number-cn {
+    list-style-type: none !important;
+    counter-reset: section4;
+}
+ol.number-cn > li {
+    counter-increment: section4 !important;
+}
+ol.number-cn > li::before {
+    content: counter(section4, simp-chinese-informal) "、" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/*******无序列\8868******/
+ul {
+    padding-left: 0;
+}
+
+ul li > ul,
+ul li > ol {
+    padding-left: 1.5em;
+}
+
+ul.ol-list {
+    list-style-type: none !important;
+}
+/******默认实心圈********/
+ul.ol-list > li::before {
+    content: "●" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******空心圈********/
+ul[ol-typpe="circle"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="circle"] > li::before {
+    content: "○" !important;
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******实心方块********/
+ul[ol-typpe="square"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="square"] > li::before {
+    content: "■" !important;
+    font-size: 10px;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******空心方块********/
+ul[ol-typpe="square1"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="square1"] > li::before {
+    content: "□" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******实心菱形********/
+ul[ol-typpe="diamond"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="diamond"] > li::before {
+    content: "◆" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+/******空心菱形********/
+ul[ol-typpe="diamond1"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="diamond1"] > li::before {
+    content: "◇" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/******破折号********/
+ul[ol-typpe="dash"] {
+    list-style-type: none !important;
+}
+
+ul[ol-typpe="dash"] > li::before {
+    content: "——" !important;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+/*----\6ce8解等----------------------------------------------------*/

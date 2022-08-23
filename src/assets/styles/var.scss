@@ -1,0 +1,384 @@
+// 文字链接颜色（提交）
+$link-text-color:#1890FF;
+$link-text-hover-color:#0481f5;
+$submit-btn-color:#1890FF;
+$submit-btn-hover-color:#0481f5;
+$cancel-btn-color:#ffffff;
+$cancel-btn-hover-color:#ffffff;
+$yellow-link-color:rgb(245, 154, 35);
+$yellow-link-hover-color:rgb(243, 163, 57);
+$green-link-color:rgba(0, 191, 191, 1);
+$green-link-hover-color:rgb(0, 170, 170);
+$red-link-color: rgba(214, 71, 48);
+$red-link-hover-color: rgb(235, 64, 37);
+$puerple-link-color: rgb(146, 46, 253);
+$puerple-link-hover-color: rgb(128, 13, 252);
+$white:#ffffff;
+$bule:#1890ff;
+$red: rgba(214, 71, 48);
+$green: #70B603;
+$green-hover: #85d603;
+$yellow:#F59A23;
+$puerple:rgb(146, 46, 253);
+$puerple-light:rgba(128, 128, 255, 1);
+$puerple-light-hover:rgb(105, 105, 231);
+$grey:#999999;
+$grey-light:#ededed;
+.warning-tag,
+.ing-tag,
+.success-tag,
+.error-tag {
+    // display: block;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    // max-width: 180px;
+    width: auto;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.warning-tag {
+    color: $yellow-link-color;
+    background: #fdf6ec;
+    border: 1px solid #faecd8;
+}
+
+.ing-tag {
+    color: $link-text-color;
+    background: #ecf5ff;
+    border: 1px solid #d9ecff;
+}
+
+.success-tag {
+    color: $green;
+    background: #f0f9eb;
+    border: 1px solid #e1f3d8;
+}
+
+.error-tag {
+    color: $red;
+    background: #fef0f0;
+    border: 1px solid #fde2e2;
+}
+
+.grey-tag {
+    color: $red;
+    background: #dedede;
+    border: 1px solid #999999;
+}
+
+.link-text {
+    color: $link-text-color;
+    cursor: pointer;
+    &:hover {
+        color: $link-text-hover-color;
+    }
+}
+
+.submit-btn {
+    width: auto;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $submit-btn-color;
+    border: 1px solid $submit-btn-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $submit-btn-hover-color;
+    }
+}
+
+.operation-line .is-disabled {
+    opacity: 0.6;
+}
+
+.error-btn {
+    width: auto;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $red-link-color;
+    border: 1px solid $red-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $red-link-hover-color;
+    }
+}
+
+.green-btn {
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $green-link-color;
+    border: 1px solid $green-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $green-link-hover-color;
+    }
+}
+
+.yellow-btn {
+    font-size: 14px;
+    width: auto;
+    color: #ffffff;
+    background-color: $yellow-link-color;
+    border: 1px solid $yellow-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $yellow-link-hover-color;
+    }
+}
+
+.puerple-btn {
+    font-size: 14px;
+    width: auto;
+    color: #ffffff;
+    background-color: $puerple-link-color;
+    border: 1px solid $puerple-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $puerple-link-hover-color;
+    }
+}
+
+.submitBtnReset {
+    font-size: 14px;
+    width: auto;
+    color: #666666;
+    background-color: #efefef;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        box-shadow: #999999 4px 0px 12px -5px;
+    }
+}
+
+// 取消按钮
+.cancelBtn {
+    width: auto;
+    font-size: 14px;
+    color: #666666;
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0px 15px;
+    line-height: 32px;
+    height: 32px;
+    margin: 0px 10px;
+    &:hover {
+        background-color: #ffffff94;
+        border: 1px solid #d7efff;
+    }
+}
+
+.yellow-btn {
+    width: auto;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $yellow-link-color;
+    border: 1px solid $yellow-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $yellow-link-hover-color;
+    }
+}
+
+.red-btn {
+    width: auto;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: $red-link-color;
+    border: 1px solid $red-link-color;
+    border-radius: 4px;
+    padding: 0 15px;
+    line-height: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin: 0px 10px;
+    &:hover {
+        background-color: $red-link-hover-color;
+    }
+}
+
+.yellow-link-txt {
+    color: $yellow-link-color;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+        color: $yellow-link-hover-color;
+    }
+}
+
+.green-link-text {
+    color: $green-link-color;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+        color: $green-link-hover-color;
+    }
+}
+
+.link-text {
+    color: $link-text-color;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+        color: $link-text-hover-color;
+    }
+}
+
+.red-link-text {
+    color: $red-link-color;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+        color: $red-link-hover-color;
+    }
+}
+
+.val-text {
+    color: $red-link-color;
+    line-height: 25px;
+    font-size: 14px;
+}
+
+// 操作行
+.operation-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    div:first-child {
+        margin-left: 0px !important;
+    }
+    div {
+        margin-bottom: 15px;
+    }
+}
+
+.back {
+    position: fixed;
+    color: #555555;
+    cursor: pointer;
+    font-size: 14px;
+    &:hover {
+        color: #444444;
+    }
+}
+
+// 展示页内容区
+.web-content {
+    margin: 0 30px;
+    overflow: hidden;
+    // height: calc(100% - 210px);
+    .col {
+        box-shadow: 0px 0px 5px 0px #eeeeee;
+        border: rgba(242, 242, 242, 1) 1px solid;
+        border-radius: 3px;
+        padding: 0 !important;
+        &:first-child {
+            margin-left: 0px;
+        }
+        .col-title {
+            background-color: #f2f2f2;
+            padding: 0px 20px;
+            border-bottom: 1px solid $link-text-color;
+            position: relative;
+            margin-bottom: 0;
+            font-size: 16px;
+            color: #666666;
+            font-weight: 900;
+            line-height: 56px;
+            .more {
+                float: right;
+                color: $link-text-color;
+                font-size: 12px;
+                cursor: pointer;
+                &:hover {
+                    color: $link-text-hover-color;
+                }
+                &::after {}
+            }
+        }
+        .col-content {
+            padding: 15px;
+            font-size: 14px;
+            .news-li {
+                height: 38px;
+                margin-top: 8px;
+                // line-height: 25px;
+                color: #666666;
+                cursor: pointer;
+                border-bottom: 1px #ededed dashed;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                &:hover {
+                    color: #333333;
+                }
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            .news-title {
+                display: inline;
+                width: calc(100% - 160px);
+            }
+            .new-icon {
+                padding: 0 5px;
+                background-color: $red;
+                color: #ffffff;
+                line-height: 15px;
+                font-size: 11px;
+                border-radius: 4px;
+                display: inline-block;
+                height: 16px;
+            }
+            .time {
+                width: 100px;
+                color: $grey;
+                font-size: 13px;
+                line-height: 1;
+                text-align: right;
+            }
+        }
+    }
+}
